@@ -210,8 +210,6 @@ public class Controller implements Initializable {
             "YearsSinceLastPromotion",
             "YearsWithCurrManager"}));
 
-
-
     private ArrayList<Employee> sortBy (String attribute){
         switch (attribute){
             case  "Age" : return SortUtils.sortByAge(Home.employees.values());
@@ -282,8 +280,6 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

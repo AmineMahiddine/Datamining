@@ -1,9 +1,45 @@
 package Models;
 
+import Main.Boxplot;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import org.jfree.chart.fx.ChartViewer;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class Data {
     private String nom, type, nature, example;
-    private int size, noise, max, min, mode,mediane, modeFreq, medianePosition,Q1,Q3;
-    private double mean;
+    private double size, noise, max, min, mode,mediane, modeFreq, medianePosition,Q1,Q3, etendue;
+    private double mean, varience;
+    private ArrayList<Double> outliers;
+
+
+
+    public double getEtendue() {
+        return etendue;
+    }
+
+    public void setEtendue(double etendue) {
+        this.etendue = etendue;
+    }
+
+    public double getVarience() {
+        return varience;
+    }
+
+    public void setVarience(double varience) {
+        this.varience = varience;
+    }
+
+    public ArrayList<Double> getOutliers() {
+        return outliers;
+    }
+
+    public void setOutliers(ArrayList<Double> outliers) {
+        this.outliers = outliers;
+    }
 
     public double getLmitLow(){
         return Q1 - 1.5*getEcartInterquartile();
@@ -13,52 +49,52 @@ public class Data {
         return Q3 - 1.5*getEcartInterquartile();
     }
 
-    public int getEcartInterquartile(){
+    public double getEcartInterquartile(){
         return getQ3() - getQ1();
     }
 
-    public int getQ1() {
+    public double getQ1() {
         return Q1;
     }
 
-    public void setQ1(int q1) {
+    public void setQ1(double q1) {
         Q1 = q1;
     }
 
-    public int getQ3() {
+    public double getQ3() {
         return Q3;
     }
 
-    public void setQ3(int q3) {
+    public void setQ3(double q3) {
         Q3 = q3;
     }
 
 
-    public int getMedianePosition() {
+    public double getMedianePosition() {
         return medianePosition;
     }
 
-    public void setMedianePosition(int medianePosition) {
+    public void setMedianePosition(double medianePosition) {
         this.medianePosition = medianePosition;
     }
 
-    public int getModeFreq() {
+    public double getModeFreq() {
         return modeFreq;
     }
 
-    public void setModeFreq(int modeFreq) {
+    public void setModeFreq(double modeFreq) {
         this.modeFreq = modeFreq;
     }
 
-    public int getSize() {
+    public double getSize() {
         return size;
     }
 
-    public void setSize(int size) {
+    public void setSize(double size) {
         this.size = size;
     }
 
-    public int getNoise() {
+    public double getNoise() {
         return noise;
     }
 
@@ -66,35 +102,35 @@ public class Data {
         this.noise = noise+1;
     }
 
-    public int getMax() {
+    public double getMax() {
         return max;
     }
 
-    public void setMax(int max) {
+    public void setMax(double max) {
         this.max = max;
     }
 
-    public int getMin() {
+    public double getMin() {
         return min;
     }
 
-    public void setMin(int min) {
+    public void setMin(double min) {
         this.min = min;
     }
 
-    public int getMode() {
+    public double getMode() {
         return mode;
     }
 
-    public void setMode(int mode) {
+    public void setMode(double mode) {
         this.mode = mode;
     }
 
-    public int getMediane() {
+    public double getMediane() {
         return mediane;
     }
 
-    public void setMediane(int mediane) {
+    public void setMediane(double mediane) {
         this.mediane = mediane;
     }
 
@@ -143,5 +179,18 @@ public class Data {
         this.type = type;
         this.nature = nature;
         this.example = example;
+    }
+
+    public static ChartViewer plotBoxplot(ArrayList<Double> values, String nom)
+    {
+        final Boxplot demo = new Boxplot("My box plot ",values,nom);
+//        Stage stage= new Stage();
+//        ChartViewer viewer = new ChartViewer(demo.getChart());
+        return new ChartViewer(demo.getChart());
+//        stage.setScene(new Scene(viewer));
+//        stage.setTitle("Boxplot");
+//        stage.setWidth(600);
+//        stage.setHeight(400);
+//        stage.show();
     }
 }

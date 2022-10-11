@@ -186,8 +186,8 @@ public class SortUtils {
     }
 
     // Sort methodes that i will use :
-    public static ArrayList<Integer> sortByNumber(HashSet<Integer> employees){
-        ArrayList<Integer> emp = new ArrayList<>(employees);
+    public static ArrayList<Double> sortByNumber(HashSet<Double> employees){
+        ArrayList<Double> emp = new ArrayList<>(employees);
         Collections.sort(emp, (e1, e2) ->Double.compare(e1, e2));
         return emp;
     }
@@ -204,7 +204,7 @@ public class SortUtils {
         return emp;
     }
 
-    public static ArrayList<Integer> sortByNumber(ArrayList<Integer> employees){
+    public static ArrayList<Double> sortByNumber(ArrayList<Double> employees){
         Collections.sort(employees, (e1, e2) ->Double.compare(e1, e2));
         return employees;
     }

@@ -255,7 +255,7 @@ public class updateEmployeeController implements Initializable {
         int yearsSinceLastPromotion = Integer.parseInt(this.yearsSinceLastPromotion.getText());
         int yearsWithCurrManager = Integer.parseInt(this.yearsWithCurrManager.getText());
         setEmployee(new Employee(age,attrition,businessTravel,dailyRate,department,distanceFromHome,education,educationField,employeeCount,Integer.parseInt(employeeNumber.getText()),environmentSatisfaction,gender,hourlyRate,jobInvolvement,jobLevel,jobRole,jobSatisfaction,maritalStatus,monthlyIncome,monthlyRate,numCompaniesWorked,over18,overTime,percentSalaryHike,performanceRating,relationshipSatisfaction,standardHours,stockOptionLevel,totalWorkingYears,trainingTimesLastYear,workLifeBalance,yearsAtCompany,yearsInCurrentRole,yearsSinceLastPromotion,yearsWithCurrManager));
-        Home.employees.put(employee.getEmployeeNumber(), employee);
+        Home.employees.put((int) employee.getEmployeeNumber(), employee);
         Stage stage = (Stage) this.age.getScene().getWindow();
         stage.close();
     }

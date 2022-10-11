@@ -1,43 +1,43 @@
 package Models;
 
 public class Employee {
-    int age;
+    double age;
     Boolean attrition;
     String businessTravel;
-    int dailyRate;
+    double dailyRate;
     String department;
-    int distanceFromHome;
-    int education;
+    double distanceFromHome;
+    double education;
     String educationField;
-    int employeeCount;
-    int employeeNumber;
-    int environmentSatisfaction;
+    double employeeCount;
+    double employeeNumber;
+    double environmentSatisfaction;
     String gender;
-    int hourlyRate;
-    int jobInvolvement;
-    int jobLevel;
+    double hourlyRate;
+    double jobInvolvement;
+    double jobLevel;
     String jobRole;
-    int jobSatisfaction;
+    double jobSatisfaction;
     String maritalStatus;
-    int monthlyIncome;
-    int monthlyRate;
-    int numCompaniesWorked;
+    double monthlyIncome;
+    double monthlyRate;
+    double numCompaniesWorked;
     Boolean over18;
     Boolean overTime;
-    int percentSalaryHike;
-    int performanceRating;
-    int relationshipSatisfaction;
-    int standardHours;
-    int stockOptionLevel;
-    int totalWorkingYears;
-    int trainingTimesLastYear;
-    int workLifeBalance;
-    int yearsAtCompany;
-    int yearsInCurrentRole;
-    int yearsSinceLastPromotion;
-    int yearsWithCurrManager;
+    double percentSalaryHike;
+    double performanceRating;
+    double relationshipSatisfaction;
+    double standardHours;
+    double stockOptionLevel;
+    double totalWorkingYears;
+    double trainingTimesLastYear;
+    double workLifeBalance;
+    double yearsAtCompany;
+    double yearsInCurrentRole;
+    double yearsSinceLastPromotion;
+    double yearsWithCurrManager;
 
-    public Employee(int age, Boolean attrition, String businessTravel, int dailyRate, String department, int distanceFromHome, int education, String educationField, int employeeCount, int employeeNumber, int environmentSatisfaction, String gender, int hourlyRate, int jobInvolvement, int jobLevel, String jobRole, int jobSatisfaction, String maritalStatus, int monthlyIncome, int monthlyRate, int numCompaniesWorked, Boolean over18, Boolean overTime, int percentSalaryHike, int performanceRating, int relationshipSatisfaction, int standardHours, int stockOptionLevel, int totalWorkingYears, int trainingTimesLastYear, int workLifeBalance, int yearsAtCompany, int yearsInCurrentRole, int yearsSinceLastPromotion, int yearsWithCurrManager) {
+    public Employee(double age, Boolean attrition, String businessTravel, double dailyRate, String department, double distanceFromHome, double education, String educationField, double employeeCount, double employeeNumber, double environmentSatisfaction, String gender, double hourlyRate, double jobInvolvement, double jobLevel, String jobRole, double jobSatisfaction, String maritalStatus, double monthlyIncome, double monthlyRate, double numCompaniesWorked, Boolean over18, Boolean overTime, double percentSalaryHike, double performanceRating, double relationshipSatisfaction, double standardHours, double stockOptionLevel, double totalWorkingYears, double trainingTimesLastYear, double workLifeBalance, double yearsAtCompany, double yearsInCurrentRole, double yearsSinceLastPromotion, double yearsWithCurrManager) {
         this.age = age;
         this.attrition = attrition;
         this.businessTravel = businessTravel;
@@ -75,11 +75,11 @@ public class Employee {
         this.yearsWithCurrManager = yearsWithCurrManager;
     }
 
-    public int getAge() {
+    public double getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(double age) {
         this.age = age;
     }
 
@@ -99,11 +99,11 @@ public class Employee {
         this.businessTravel = businessTravel;
     }
 
-    public int getDailyRate() {
+    public double getDailyRate() {
         return dailyRate;
     }
 
-    public void setDailyRate(int dailyRate) {
+    public void setDailyRate(double dailyRate) {
         this.dailyRate = dailyRate;
     }
 
@@ -115,19 +115,19 @@ public class Employee {
         this.department = department;
     }
 
-    public int getDistanceFromHome() {
+    public double getDistanceFromHome() {
         return distanceFromHome;
     }
 
-    public void setDistanceFromHome(int distanceFromHome) {
+    public void setDistanceFromHome(double distanceFromHome) {
         this.distanceFromHome = distanceFromHome;
     }
 
-    public int getEducation() {
+    public double getEducation() {
         return education;
     }
 
-    public void setEducation(int education) {
+    public void setEducation(double education) {
         this.education = education;
     }
 
@@ -139,27 +139,27 @@ public class Employee {
         this.educationField = educationField;
     }
 
-    public int getEmployeeCount() {
+    public double getEmployeeCount() {
         return employeeCount;
     }
 
-    public void setEmployeeCount(int employeeCount) {
+    public void setEmployeeCount(double employeeCount) {
         this.employeeCount = employeeCount;
     }
 
-    public int getEmployeeNumber() {
+    public double getEmployeeNumber() {
         return employeeNumber;
     }
 
-    public void setEmployeeNumber(int employeeNumber) {
+    public void setEmployeeNumber(double employeeNumber) {
         this.employeeNumber = employeeNumber;
     }
 
-    public int getEnvironmentSatisfaction() {
+    public double getEnvironmentSatisfaction() {
         return environmentSatisfaction;
     }
 
-    public void setEnvironmentSatisfaction(int environmentSatisfaction) {
+    public void setEnvironmentSatisfaction(double environmentSatisfaction) {
         this.environmentSatisfaction = environmentSatisfaction;
     }
 
@@ -171,27 +171,27 @@ public class Employee {
         this.gender = gender;
     }
 
-    public int getHourlyRate() {
+    public double getHourlyRate() {
         return hourlyRate;
     }
 
-    public void setHourlyRate(int hourlyRate) {
+    public void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
 
-    public int getJobInvolvement() {
+    public double getJobInvolvement() {
         return jobInvolvement;
     }
 
-    public void setJobInvolvement(int jobInvolvement) {
+    public void setJobInvolvement(double jobInvolvement) {
         this.jobInvolvement = jobInvolvement;
     }
 
-    public int getJobLevel() {
+    public double getJobLevel() {
         return jobLevel;
     }
 
-    public void setJobLevel(int jobLevel) {
+    public void setJobLevel(double jobLevel) {
         this.jobLevel = jobLevel;
     }
 
@@ -203,11 +203,11 @@ public class Employee {
         this.jobRole = jobRole;
     }
 
-    public int getJobSatisfaction() {
+    public double getJobSatisfaction() {
         return jobSatisfaction;
     }
 
-    public void setJobSatisfaction(int jobSatisfaction) {
+    public void setJobSatisfaction(double jobSatisfaction) {
         this.jobSatisfaction = jobSatisfaction;
     }
 
@@ -219,27 +219,27 @@ public class Employee {
         this.maritalStatus = maritalStatus;
     }
 
-    public int getMonthlyIncome() {
+    public double getMonthlyIncome() {
         return monthlyIncome;
     }
 
-    public void setMonthlyIncome(int monthlyIncome) {
+    public void setMonthlyIncome(double monthlyIncome) {
         this.monthlyIncome = monthlyIncome;
     }
 
-    public int getMonthlyRate() {
+    public double getMonthlyRate() {
         return monthlyRate;
     }
 
-    public void setMonthlyRate(int monthlyRate) {
+    public void setMonthlyRate(double monthlyRate) {
         this.monthlyRate = monthlyRate;
     }
 
-    public int getNumCompaniesWorked() {
+    public double getNumCompaniesWorked() {
         return numCompaniesWorked;
     }
 
-    public void setNumCompaniesWorked(int numCompaniesWorked) {
+    public void setNumCompaniesWorked(double numCompaniesWorked) {
         this.numCompaniesWorked = numCompaniesWorked;
     }
 
@@ -259,99 +259,99 @@ public class Employee {
         this.overTime = overTime;
     }
 
-    public int getPercentSalaryHike() {
+    public double getPercentSalaryHike() {
         return percentSalaryHike;
     }
 
-    public void setPercentSalaryHike(int percentSalaryHike) {
+    public void setPercentSalaryHike(double percentSalaryHike) {
         this.percentSalaryHike = percentSalaryHike;
     }
 
-    public int getPerformanceRating() {
+    public double getPerformanceRating() {
         return performanceRating;
     }
 
-    public void setPerformanceRating(int performanceRating) {
+    public void setPerformanceRating(double performanceRating) {
         this.performanceRating = performanceRating;
     }
 
-    public int getRelationshipSatisfaction() {
+    public double getRelationshipSatisfaction() {
         return relationshipSatisfaction;
     }
 
-    public void setRelationshipSatisfaction(int relationshipSatisfaction) {
+    public void setRelationshipSatisfaction(double relationshipSatisfaction) {
         this.relationshipSatisfaction = relationshipSatisfaction;
     }
 
-    public int getStandardHours() {
+    public double getStandardHours() {
         return standardHours;
     }
 
-    public void setStandardHours(int standardHours) {
+    public void setStandardHours(double standardHours) {
         this.standardHours = standardHours;
     }
 
-    public int getStockOptionLevel() {
+    public double getStockOptionLevel() {
         return stockOptionLevel;
     }
 
-    public void setStockOptionLevel(int stockOptionLevel) {
+    public void setStockOptionLevel(double stockOptionLevel) {
         this.stockOptionLevel = stockOptionLevel;
     }
 
-    public int getTotalWorkingYears() {
+    public double getTotalWorkingYears() {
         return totalWorkingYears;
     }
 
-    public void setTotalWorkingYears(int totalWorkingYears) {
+    public void setTotalWorkingYears(double totalWorkingYears) {
         this.totalWorkingYears = totalWorkingYears;
     }
 
-    public int getTrainingTimesLastYear() {
+    public double getTrainingTimesLastYear() {
         return trainingTimesLastYear;
     }
 
-    public void setTrainingTimesLastYear(int trainingTimesLastYear) {
+    public void setTrainingTimesLastYear(double trainingTimesLastYear) {
         this.trainingTimesLastYear = trainingTimesLastYear;
     }
 
-    public int getWorkLifeBalance() {
+    public double getWorkLifeBalance() {
         return workLifeBalance;
     }
 
-    public void setWorkLifeBalance(int workLifeBalance) {
+    public void setWorkLifeBalance(double workLifeBalance) {
         this.workLifeBalance = workLifeBalance;
     }
 
-    public int getYearsAtCompany() {
+    public double getYearsAtCompany() {
         return yearsAtCompany;
     }
 
-    public void setYearsAtCompany(int yearsAtCompany) {
+    public void setYearsAtCompany(double yearsAtCompany) {
         this.yearsAtCompany = yearsAtCompany;
     }
 
-    public int getYearsInCurrentRole() {
+    public double getYearsInCurrentRole() {
         return yearsInCurrentRole;
     }
 
-    public void setYearsInCurrentRole(int yearsInCurrentRole) {
+    public void setYearsInCurrentRole(double yearsInCurrentRole) {
         this.yearsInCurrentRole = yearsInCurrentRole;
     }
 
-    public int getYearsSinceLastPromotion() {
+    public double getYearsSinceLastPromotion() {
         return yearsSinceLastPromotion;
     }
 
-    public void setYearsSinceLastPromotion(int yearsSinceLastPromotion) {
+    public void setYearsSinceLastPromotion(double yearsSinceLastPromotion) {
         this.yearsSinceLastPromotion = yearsSinceLastPromotion;
     }
 
-    public int getYearsWithCurrManager() {
+    public double getYearsWithCurrManager() {
         return yearsWithCurrManager;
     }
 
-    public void setYearsWithCurrManager(int yearsWithCurrManager) {
+    public void setYearsWithCurrManager(double yearsWithCurrManager) {
         this.yearsWithCurrManager = yearsWithCurrManager;
     }
 

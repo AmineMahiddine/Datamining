@@ -2,28 +2,43 @@ package Main;
 
 import Models.Data;
 import Models.Employee;
+import javafx.embed.swing.SwingNode;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.SubScene;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.statistics.DefaultBoxAndWhiskerCategoryDataset;
+import org.jfree.chart.fx.ChartViewer;
+import org.jfree.data.statistics.HistogramDataset;
+import org.jfree.data.statistics.HistogramType;
+import org.jfree.data.xy.IntervalXYDataset;
+import org.jfree.ui.RefineryUtilities;
 
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ResourceBundle;
 
@@ -45,7 +60,7 @@ public class Overview implements Initializable {
     private TableView<Data> dataTypeTab;
 
     @FXML
-    private WebView boxPlotPane;
+    private AnchorPane boxPlotPane;
 
     @FXML
     private Pane datasetDescPane;
@@ -95,47 +110,59 @@ public class Overview implements Initializable {
     @FXML
     private Text iqr;
 
-    private WebEngine engine;
+    @FXML
+    private Text varience;
+
+    @FXML
+    private Text etendue;
+
+    @FXML
+    private Text ecarttype;
+
+
+
+
+    String clickedAttribute = "Age";
 
 
 
     ArrayList<?> data;
 
-    ArrayList<Integer> Ages = new ArrayList<>();
+    ArrayList<Double> Ages = new ArrayList<>();
     ArrayList<Boolean> Attritions = new ArrayList<>();
     ArrayList<String> BusinessTravels = new ArrayList<>();
-    ArrayList<Integer> DailyRates = new ArrayList<>();
+    ArrayList<Double> DailyRates = new ArrayList<>();
     ArrayList<String> Departments = new ArrayList<>();
-    ArrayList<Integer> DistanceFromHomes = new ArrayList<>();
-    ArrayList<Integer> Educations = new ArrayList<>();
+    ArrayList<Double> DistanceFromHomes = new ArrayList<>();
+    ArrayList<Double> Educations = new ArrayList<>();
     ArrayList<String> EducationFields = new ArrayList<>();
-    ArrayList<Integer> EmployeeCounts = new ArrayList<>();
-    ArrayList<Integer> EmployeeNumbers = new ArrayList<>();
-    ArrayList<Integer> EnvironmentSatisfactions = new ArrayList<>();
+    ArrayList<Double> EmployeeCounts = new ArrayList<>();
+    ArrayList<Double> EmployeeNumbers = new ArrayList<>();
+    ArrayList<Double> EnvironmentSatisfactions = new ArrayList<>();
     ArrayList<String> Genders = new ArrayList<>();
-    ArrayList<Integer> HourlyRates = new ArrayList<>();
-    ArrayList<Integer> JobInvolvements = new ArrayList<>();
-    ArrayList<Integer> JobLevels = new ArrayList<>();
+    ArrayList<Double> HourlyRates = new ArrayList<>();
+    ArrayList<Double> JobInvolvements = new ArrayList<>();
+    ArrayList<Double> JobLevels = new ArrayList<>();
     ArrayList<String> JobRoles = new ArrayList<>();
-    ArrayList<Integer> JobSatisfactions = new ArrayList<>();
+    ArrayList<Double> JobSatisfactions = new ArrayList<>();
     ArrayList<String> MaritalStatuss = new ArrayList<>();
-    ArrayList<Integer> MonthlyIncomes = new ArrayList<>();
-    ArrayList<Integer> MonthlyRates = new ArrayList<>();
-    ArrayList<Integer> NumCompaniesWorkeds = new ArrayList<>();
+    ArrayList<Double> MonthlyIncomes = new ArrayList<>();
+    ArrayList<Double> MonthlyRates = new ArrayList<>();
+    ArrayList<Double> NumCompaniesWorkeds = new ArrayList<>();
     ArrayList<Boolean> Over18s = new ArrayList<>();
     ArrayList<Boolean> OverTimes = new ArrayList<>();
-    ArrayList<Integer> PercentSalaryHikes = new ArrayList<>();
-    ArrayList<Integer> PerformanceRatings = new ArrayList<>();
-    ArrayList<Integer> RelationshipSatisfactions = new ArrayList<>();
-    ArrayList<Integer> StandardHourss = new ArrayList<>();
-    ArrayList<Integer> StockOptionLevels = new ArrayList<>();
-    ArrayList<Integer> TotalWorkingYearss = new ArrayList<>();
-    ArrayList<Integer> TrainingTimesLastYears = new ArrayList<>();
-    ArrayList<Integer> WorkLifeBalances = new ArrayList<>();
-    ArrayList<Integer> YearsAtCompanys = new ArrayList<>();
-    ArrayList<Integer> YearsInCurrentRoles = new ArrayList<>();
-    ArrayList<Integer> YearsSinceLastPromotions = new ArrayList<>();
-    ArrayList<Integer> YearsWithCurrManagers = new ArrayList<>();
+    ArrayList<Double> PercentSalaryHikes = new ArrayList<>();
+    ArrayList<Double> PerformanceRatings = new ArrayList<>();
+    ArrayList<Double> RelationshipSatisfactions = new ArrayList<>();
+    ArrayList<Double> StandardHourss = new ArrayList<>();
+    ArrayList<Double> StockOptionLevels = new ArrayList<>();
+    ArrayList<Double> TotalWorkingYearss = new ArrayList<>();
+    ArrayList<Double> TrainingTimesLastYears = new ArrayList<>();
+    ArrayList<Double> WorkLifeBalances = new ArrayList<>();
+    ArrayList<Double> YearsAtCompanys = new ArrayList<>();
+    ArrayList<Double> YearsInCurrentRoles = new ArrayList<>();
+    ArrayList<Double> YearsSinceLastPromotions = new ArrayList<>();
+    ArrayList<Double> YearsWithCurrManagers = new ArrayList<>();
 
     private void initTableDesc(){
         nomCol.setCellValueFactory(new PropertyValueFactory<Data, String>("nom"));
@@ -146,7 +173,7 @@ public class Overview implements Initializable {
         dataTypeTab.setOnMouseClicked((MouseEvent event) -> {
             if (event.getClickCount() == 2 ){
                 initTabs(dataTypeTab.getSelectionModel().getSelectedItem().getNom());
-                initBoxPlot();
+
             }
         });
     }
@@ -193,7 +220,16 @@ public class Overview implements Initializable {
         // update the attributes of object Data;
     }
 
+    public void openBoxPlot() {
+        if(data.size()>0 && !clickedAttribute.isEmpty()){
+            initBoxPlot((ArrayList<Double>) data, clickedAttribute);
+        }else{
+            System.out.println("there's an error");
+        }
+    }
+
     private void initTabs(String attribute){
+        clickedAttribute = attribute;
         switch (attribute){
             case "Age" : data = StatUtils.tendence(Ages, "Age");  break;
             case "Education" : data = StatUtils.tendence(Educations,"Education"); break;
@@ -232,13 +268,13 @@ public class Overview implements Initializable {
             case "MaritalStatus" : data = SortUtils.sortByString(new HashSet<>(MaritalStatuss)); break;
         }
 
-        VBox list = new VBox();
+        HBox list = new HBox();
         StackPane p ;
         Text txt;
         for (int i = 0; i < data.size(); i++) {
             txt = new Text(data.get(i).toString());
             p = new StackPane();
-            p.setMinSize(250, 20);
+            p.setMinSize(40, 40);
             p.setStyle("-fx-border-color:#e2e2e2;");
 
             p.getChildren().add(txt);
@@ -262,6 +298,9 @@ public class Overview implements Initializable {
                 q1.setText(String.valueOf(d.getQ1()));
                 q3.setText(String.valueOf(d.getQ3()));
                 iqr.setText(String.valueOf(d.getEcartInterquartile()));
+                varience.setText(String.valueOf(String.format("%.2f",d.getVarience())));
+                etendue.setText(String.valueOf(d.getEtendue()));
+                ecarttype.setText(String.format("%.2f",StatUtils.getEcart_type((ArrayList<Double>) data)));
             }
         }
         dataList.setContent(list);
@@ -269,15 +308,48 @@ public class Overview implements Initializable {
 
     }
 
-    private void initBoxPlot(){
-        engine = boxPlotPane.getEngine();
-//        WebEngine webEngine = new WebEngine();
-//        webView.getEngine().loadContent("D:\\Dev\\Java\\DataMining\\src\\web\\index.html");
-//        System.out.println(getClass().getResource("/web/index.html").toString());
-        engine.load(getClass().getResource("/web/index.html").toString());
-//        engine.executeScript("plotBoxPlot(" + transformToJavascriptArray((ArrayList<Integer>) data) + ")");
-//        File index = new File("D:\\Dev\\Java\\DataMining\\src\\web\\index.html");
-//        webEngine.load(index.toURI().toString());
+    private void initBoxPlot(ArrayList<Double> list, String attribute){
+        Stage stage= new Stage();
+        stage.setScene(new Scene(Data.plotBoxplot(list, attribute)));
+        stage.setTitle("Boxplot");
+        stage.setWidth(600);
+        stage.setHeight(400);
+        stage.show();
+    }
+
+    public void plotHistogram() throws IOException {
+        ChartViewer viewer = new ChartViewer(Histogramme.createHistogramChart((java.util.List<Double>) data, clickedAttribute, 30));
+        Stage stage= new Stage();
+        stage.setScene(new Scene(viewer));
+        stage.setTitle("JFreeChart: Histogram");
+        stage.setWidth(600);
+        stage.setHeight(400);
+        stage.show();
+//        HistogramDataset hds = new HistogramDataset();
+//        hds.setType(HistogramType.FREQUENCY);
+//        double[] dataset = new double[data.size()];
+//        for (int i = 0; i < dataset.length; i++) {
+//            dataset[i] =  (Double) (data.get(i));
+//        }
+//        hds.addSeries("", dataset, 60);
+////        HashMap<Integer, Integer> map = StatUtils.dataFrequencyCounter((ArrayList<Integer>) data);
+////        for (int i = 0; i < map.keySet().size(); i++) {
+////            hds.addSeries(map.keySet());
+////        }
+//        JFreeChart histogram = ChartFactory.createHistogram("Histogram", "Ages", "Ages",  hds, PlotOrientation.VERTICAL,false,false,false);
+//
+//        ChartPanel chartPanel = new ChartPanel(histogram);
+//        JFrame frame = new JFrame();
+//        frame.add(chartPanel);
+//        frame.setVisible(true);
+
+//        ChartViewer viewer = new ChartViewer(Graphique.createHistogramChart(data, clickedAttribute, nb_bins));
+//        Stage stage= new Stage();
+//        stage.setScene(new Scene(viewer));
+//        stage.setTitle("JFreeChart: Histogram");
+//        stage.setWidth(600);
+//        stage.setHeight(400);
+//        stage.show();
     }
 
     private String transformToJavascriptArray(ArrayList<Integer> arr) {
@@ -340,7 +412,6 @@ public class Overview implements Initializable {
         initTableDesc();
         initLists();
         initTabs("Age");
-        initBoxPlot();
     }
 }
 
