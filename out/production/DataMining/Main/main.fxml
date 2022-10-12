@@ -3,65 +3,64 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="1105.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="1105.0" styleClass="light" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controller">
    <children>
       <TableView fx:id="dataFrame" layoutX="21.0" layoutY="85.0" prefHeight="569.0" prefWidth="1059.0">
         <columns>
-            <TableColumn fx:id="nCol" prefWidth="53.0" text="N°" />
-            <TableColumn fx:id="ageCol" prefWidth="60.0" text="Age" />
-            <TableColumn fx:id="genderCol" text="Gender" />
-            <TableColumn fx:id="maritalCol" prefWidth="94.0" text="Marital status" />
-            <TableColumn fx:id="eduCol" prefWidth="132.0" text="Education Field" />
-            <TableColumn fx:id="depCol" prefWidth="123.0" text="Department" />
-            <TableColumn fx:id="jobCol" prefWidth="113.0" text="Job Role" />
-            <TableColumn fx:id="BusinessCol" prefWidth="75.0" text="Business Travel" />
-            <TableColumn fx:id="DailyCol" prefWidth="75.0" text="Daily Rate" />
-            <TableColumn fx:id="DistanceFromHomeCol" prefWidth="75.0" text="DistanceFromHome" />
-            <TableColumn fx:id="EducationCol" prefWidth="75.0" text="Education" />
-            <TableColumn fx:id="EmployeeCountCol" prefWidth="75.0" text="EmployeeCount" />
-            <TableColumn fx:id="EnvironmentSatisfactionCol" prefWidth="75.0" text="EnvironmentSatisfaction" />
-            <TableColumn fx:id="HourlyRateCol" prefWidth="75.0" text="HourlyRate" />
-            <TableColumn fx:id="JobInvolvementCol" prefWidth="75.0" text="JobInvolvement" />
-            <TableColumn fx:id="JobLevelCol" prefWidth="75.0" text="JobLevel" />
-            <TableColumn fx:id="JobSatisfactionCol" prefWidth="75.0" text="JobSatisfaction" />
-            <TableColumn fx:id="MonthlyIncomeCol" prefWidth="75.0" text="MonthlyIncome" />
-            <TableColumn fx:id="MonthlyRateCol" prefWidth="75.0" text="MonthlyRate" />
-            <TableColumn fx:id="NumCompaniesWorkedCol" prefWidth="75.0" text="NumCompaniesWorked" />
-            <TableColumn fx:id="Over18Col" prefWidth="75.0" text="Over18" />
-            <TableColumn fx:id="OverTimeCol" prefWidth="75.0" text="OverTime" />
-            <TableColumn fx:id="PercentSalaryHikeCol" prefWidth="75.0" text="PercentSalaryHike" />
-            <TableColumn fx:id="PerformanceRatingCol" prefWidth="75.0" text="PerformanceRating" />
-            <TableColumn fx:id="RelationshipSatisfactionCol" prefWidth="75.0" text="RelationshipSatisfaction" />
-            <TableColumn fx:id="StockOptionLevelCol" prefWidth="75.0" text="StockOptionLevel" />
-            <TableColumn fx:id="TotalWorkingYearsCol" prefWidth="75.0" text="TotalWorkingYears" />
-            <TableColumn fx:id="TrainingTimesLastYearCol" prefWidth="75.0" text="TrainingTimesLastYear" />
-            <TableColumn fx:id="WorkLifeBalanceCol" prefWidth="75.0" text="WorkLifeBalance" />
-            <TableColumn fx:id="YearsAtCompanyCol" prefWidth="75.0" text="YearsAtCompany" />
-            <TableColumn fx:id="YearsInCurrentRoleCol" prefWidth="75.0" text="YearsInCurrentRole" />
-            <TableColumn fx:id="YearsSinceLastPromotionCol" prefWidth="75.0" text="YearsSinceLastPromotion" />
-            <TableColumn fx:id="YearsWithCurrManagerCol" prefWidth="75.0" text="YearsWithCurrManager" />
+            <TableColumn fx:id="nCol" prefWidth="53.0" style="-fx-min-height: 29px;" styleClass="light" text="N°" />
+            <TableColumn fx:id="ageCol" prefWidth="60.0" style="-fx-min-height: 29px;" styleClass="light" text="Age" />
+            <TableColumn fx:id="genderCol" style="-fx-min-height: 29px;" styleClass="light" text="Gender" />
+            <TableColumn fx:id="maritalCol" prefWidth="94.0" style="-fx-min-height: 29px;" styleClass="light" text="Marital status" />
+            <TableColumn fx:id="eduCol" prefWidth="132.0" style="-fx-min-height: 29px;" styleClass="light" text="Education Field" />
+            <TableColumn fx:id="depCol" prefWidth="123.0" style="-fx-min-height: 29px;" styleClass="light" text="Department" />
+            <TableColumn fx:id="jobCol" prefWidth="113.0" style="-fx-min-height: 29px;" styleClass="light" text="Job Role" />
+            <TableColumn fx:id="BusinessCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="Business Travel" />
+            <TableColumn fx:id="DailyCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="Daily Rate" />
+            <TableColumn fx:id="DistanceFromHomeCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="DistanceFromHome" />
+            <TableColumn fx:id="EducationCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="Education" />
+            <TableColumn fx:id="EmployeeCountCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="EmployeeCount" />
+            <TableColumn fx:id="EnvironmentSatisfactionCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="EnvironmentSatisfaction" />
+            <TableColumn fx:id="HourlyRateCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="HourlyRate" />
+            <TableColumn fx:id="JobInvolvementCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="JobInvolvement" />
+            <TableColumn fx:id="JobLevelCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="JobLevel" />
+            <TableColumn fx:id="JobSatisfactionCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="JobSatisfaction" />
+            <TableColumn fx:id="MonthlyIncomeCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="MonthlyIncome" />
+            <TableColumn fx:id="MonthlyRateCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="MonthlyRate" />
+            <TableColumn fx:id="NumCompaniesWorkedCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="NumCompaniesWorked" />
+            <TableColumn fx:id="Over18Col" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="Over18" />
+            <TableColumn fx:id="OverTimeCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="OverTime" />
+            <TableColumn fx:id="PercentSalaryHikeCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="PercentSalaryHike" />
+            <TableColumn fx:id="PerformanceRatingCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="PerformanceRating" />
+            <TableColumn fx:id="RelationshipSatisfactionCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="RelationshipSatisfaction" />
+            <TableColumn fx:id="StockOptionLevelCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="StockOptionLevel" />
+            <TableColumn fx:id="TotalWorkingYearsCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="TotalWorkingYears" />
+            <TableColumn fx:id="TrainingTimesLastYearCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="TrainingTimesLastYear" />
+            <TableColumn fx:id="WorkLifeBalanceCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="WorkLifeBalance" />
+            <TableColumn fx:id="YearsAtCompanyCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="YearsAtCompany" />
+            <TableColumn fx:id="YearsInCurrentRoleCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="YearsInCurrentRole" />
+            <TableColumn fx:id="YearsSinceLastPromotionCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="YearsSinceLastPromotion" />
+            <TableColumn fx:id="YearsWithCurrManagerCol" prefWidth="75.0" style="-fx-min-height: 29px;" styleClass="light" text="YearsWithCurrManager" />
 
 
         </columns>
       </TableView>
-      <TitledPane collapsible="false" layoutX="21.0" layoutY="4.0" prefHeight="79.0" prefWidth="1059.0" text="Options">
-         <content>
-            <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="1038.0" spacing="10.0">
+      <HBox alignment="CENTER_LEFT" layoutX="23.0" layoutY="24.0" prefHeight="53.0" prefWidth="1059.0" spacing="10.0" styleClass="light">
+         <children>
+            <HBox alignment="CENTER" prefHeight="53.0" prefWidth="319.0" spacing="5.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="33.0" prefWidth="222.0" spacing="5.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sort :" />
-                        <ComboBox fx:id="sortByCombo" onAction="#sortDataFrame" prefHeight="32.0" prefWidth="251.0" promptText="Sort" />
-                     </children>
-                  </HBox>
+                  <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" text="Sort :">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Text>
+                  <ComboBox fx:id="sortByCombo" onAction="#sortDataFrame" prefHeight="32.0" prefWidth="243.0" promptText="Sort" styleClass="light" />
                </children>
             </HBox>
-         </content>
-      </TitledPane>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

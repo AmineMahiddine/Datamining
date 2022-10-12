@@ -1,0 +1,36 @@
+.light{
+	-fx-background-color: #D5CFE1;
+	-fx-text-fill: #4A4063;
+}
+.dark{
+	-fx-background-color: #4A4063;
+	-fx-text-fill: white;
+}
+
+
+.button:hover{
+	-fx-background-color: #D5CFE1;
+	-fx-text-fill: #4A4063;
+}
+
+.bluebg{
+		-fx-background-color: #508CA4;
+			-fx-text-fill: #D5CFE1;
+		
+}
+.logo{
+	 -fx-background-image: url("./logo.png");
+	  -fx-background-size: contain;
+	  -fx-background-repeat: no-repeat;
+}
+
+.dataset{
+	 -fx-background-image: url("./dataset.png");
+	  -fx-background-size: contain;
+	  -fx-background-repeat: no-repeat;
+}
+.overview{
+	 -fx-background-image: url("./overview.png");
+	  -fx-background-size: contain;
+	  -fx-background-repeat: no-repeat;
+}

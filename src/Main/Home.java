@@ -52,7 +52,7 @@ public class Home implements Initializable {
         Scanner myReader;
         try {
             int i = 0;
-            File file = new File("D:\\Dev\\Java\\DataMining\\src\\Datasets\\Dataset1.csv");
+            File file = new File("/home/amine/git/DataMining2/src/Datasets/Dataset1.csv");
             FileInputStream dataset = new FileInputStream(file);
             myReader = new Scanner(dataset);
             String line;

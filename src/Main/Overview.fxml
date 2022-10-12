@@ -14,21 +14,21 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="1105.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Overview">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="647.0" prefWidth="1105.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Overview">
    <children>
-      <TableView fx:id="dataTypeTab" layoutX="476.0" layoutY="9.0" prefHeight="625.0" prefWidth="618.0">
+      <TableView fx:id="dataTypeTab" layoutX="476.0" layoutY="9.0" prefHeight="625.0" prefWidth="618.0" styleClass="light">
         <columns>
-          <TableColumn fx:id="nomCol" prefWidth="178.0" text="Nom" />
-          <TableColumn fx:id="typeCol" prefWidth="112.0" text="Type" />
-            <TableColumn fx:id="natureCol" prefWidth="148.0" text="Nature" />
-            <TableColumn fx:id="exampleCol" prefWidth="161.0" text="Example" />
+          <TableColumn fx:id="nomCol" prefWidth="178.0" styleClass="light" text="Nom" />
+          <TableColumn fx:id="typeCol" prefWidth="112.0" styleClass="light" text="Type" />
+            <TableColumn fx:id="natureCol" prefWidth="148.0" styleClass="light" text="Nature" />
+            <TableColumn fx:id="exampleCol" prefWidth="161.0" styleClass="light" text="Example" />
         </columns>
       </TableView>
       <Pane fx:id="attributeDetailPane" layoutX="14.0" layoutY="9.0" prefHeight="625.0" prefWidth="450.0" style="-fx-border-color: #c5c5c5;">
          <children>
-            <VBox layoutY="2.0" prefHeight="624.0" prefWidth="452.0" spacing="10.0">
+            <VBox layoutY="2.0" prefHeight="624.0" prefWidth="452.0" spacing="10.0" styleClass="light">
                <children>
-                  <GridPane minHeight="199.0" prefHeight="508.0" prefWidth="432.0">
+                  <GridPane minHeight="199.0" prefHeight="508.0" prefWidth="432.0" styleClass="light">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="225.6666717529297" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.00001525878906" minWidth="10.0" prefWidth="226.3333282470703" />
@@ -52,105 +52,105 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom d'attribut">
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Nom d'attribut">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="nomDattr" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="122.3359375" GridPane.columnIndex="1" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nbr de donnees" GridPane.rowIndex="1">
+                        <Text fx:id="nomDattr" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="122.3359375" GridPane.columnIndex="1" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Nbr de donnees" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="nbrDon" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="139.6692657470703" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nbr de données bruitée" GridPane.rowIndex="2">
+                        <Text fx:id="nbrDon" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="139.6692657470703" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Nbr de données bruitée" GridPane.rowIndex="2">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="nbrAttr" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="126.33592224121094" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Max" GridPane.rowIndex="3">
+                        <Text fx:id="nbrAttr" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="126.33592224121094" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Max" GridPane.rowIndex="3">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="max" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="145.00259399414062" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Min" GridPane.rowIndex="4">
+                        <Text fx:id="max" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="145.00259399414062" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Min" GridPane.rowIndex="4">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="min" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="113.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Q1" GridPane.rowIndex="5">
+                        <Text fx:id="min" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="113.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Q1" GridPane.rowIndex="5">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="q1" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="146.33592224121094" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Q3" GridPane.rowIndex="6">
+                        <Text fx:id="q1" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="146.33592224121094" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Q3" GridPane.rowIndex="6">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="q3" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="143.66925048828125" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                        <Text fx:id="iqr" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="123.66928100585938" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="InterquartileRange IQR" GridPane.rowIndex="7">
+                        <Text fx:id="q3" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="143.66925048828125" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <Text fx:id="iqr" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="123.66928100585938" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="InterquartileRange IQR" GridPane.rowIndex="7">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="La moyenne" GridPane.rowIndex="8">
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="La moyenne" GridPane.rowIndex="8">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="mean" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="135.6666717529297" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Le Mode" GridPane.rowIndex="9">
+                        <Text fx:id="mean" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="135.6666717529297" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Le Mode" GridPane.rowIndex="9">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="mode" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="153.00259399414062" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Freq du mode" GridPane.rowIndex="10">
+                        <Text fx:id="mode" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="153.00259399414062" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Freq du mode" GridPane.rowIndex="10">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="freq" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="158.3359375" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="La mediane" GridPane.rowIndex="11">
+                        <Text fx:id="freq" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="158.3359375" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="La mediane" GridPane.rowIndex="11">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="mediane" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="154.3359375" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="pos de la mediane" GridPane.rowIndex="12">
+                        <Text fx:id="mediane" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="154.3359375" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="pos de la mediane" GridPane.rowIndex="12">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="posMediane" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Varience" GridPane.rowIndex="13">
+                        <Text fx:id="posMediane" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Varience" GridPane.rowIndex="13">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="varience" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Etendue" GridPane.rowIndex="14">
+                        <Text fx:id="varience" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Etendue" GridPane.rowIndex="14">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="etendue" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ecart-type" GridPane.rowIndex="15">
+                        <Text fx:id="etendue" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+                        <Text fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="Ecart-type" GridPane.rowIndex="15">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
                         </Text>
-                        <Text fx:id="ecarttype" strokeType="OUTSIDE" strokeWidth="0.0" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+                        <Text fx:id="ecarttype" fill="#4a4063" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="light" text="m" wrappingWidth="137.00262451171875" GridPane.columnIndex="1" GridPane.rowIndex="15" />
                      </children>
                   </GridPane>
-                  <ScrollPane fx:id="dataList" prefHeight="48.0" prefWidth="432.0" vbarPolicy="NEVER" />
+                  <ScrollPane fx:id="dataList" prefHeight="48.0" prefWidth="432.0" styleClass="light" vbarPolicy="NEVER" />
                   <GridPane prefHeight="39.0" prefWidth="432.0">
                     <columnConstraints>
                       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -161,9 +161,9 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button mnemonicParsing="false" onAction="#openBoxPlot" prefHeight="39.0" prefWidth="207.0" text="Box plot" />
-                        <Button mnemonicParsing="false" onAction="#plotHistogram" prefHeight="39.0" prefWidth="207.0" text="Histogramme" GridPane.columnIndex="1" />
-                        <Button mnemonicParsing="false" onAction="#openBoxPlot" prefHeight="39.0" prefWidth="207.0" text="Dispersion" GridPane.columnIndex="2" />
+                        <Button mnemonicParsing="false" onAction="#openBoxPlot" prefHeight="39.0" prefWidth="140.0" styleClass="dark" text="Box plot" />
+                        <Button mnemonicParsing="false" onAction="#plotHistogram" prefHeight="39.0" prefWidth="140.0" styleClass="dark" text="Histogramme" GridPane.columnIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#openBoxPlot" prefHeight="39.0" prefWidth="140.0" styleClass="dark" text="Dispersion" GridPane.columnIndex="2" />
                      </children>
                   </GridPane>
                </children>
